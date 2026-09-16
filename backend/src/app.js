@@ -12,6 +12,10 @@ app.use(express.json());
 
 // ROUTES
 
+const violationRoutes = require("./routes/violationRoutes");
+const correctiveActionRoutes = require("./routes/correctiveActionRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 const authRoutes = require("./routes/authRoutes");
 const mineRoutes = require("./routes/mineRoutes");
 const inspectionRoutes = require("./routes/inspectionRoutes");
@@ -25,6 +29,19 @@ app.use("/api/mines", mineRoutes);
 
 // INSPECTIONS
 app.use("/api/inspections", inspectionRoutes);
+app.use("/api/inspections", inspectionRoutes);
+
+// VIOLATIONS
+app.use("/api/violations", violationRoutes);
+
+// CORRECTIVE ACTIONS
+app.use("/api/corrective-actions", correctiveActionRoutes);
+
+// DASHBOARD
+app.use("/api/dashboard", dashboardRoutes);
+
+// REPORTS
+app.use("/api/reports", reportRoutes);
 
 
 // HOME
